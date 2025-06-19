@@ -17,6 +17,14 @@ import HelloWorld from './components/HelloWorld.vue'
     </div>
   </header>
 
+    <v-app>
+    <v-main>
+      <v-container>
+        <v-btn color="primary">Botão Vuetify</v-btn>
+      </v-container>
+    </v-main>
+  </v-app>
+
   <RouterView />
 </template>
 
