@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import { login } from './auth.controller';
+import { validarLogin } from '../../middlewares/validarLogin';
+import { handleValidation } from '../../middlewares/handleValidation';
 
 const router = Router();
 
@@ -26,6 +28,6 @@ const router = Router();
  *         description: Credenciais inválidas
  */
 
-router.post('/login', login);
+router.post('/login', validarLogin, handleValidation, login)
 
 export default router;
