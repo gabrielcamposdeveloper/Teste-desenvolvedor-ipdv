@@ -3,28 +3,9 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <!-- <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink> -->
-      </nav>
-    </div>
-  </header>
-
-    <v-app>
-    <v-main>
-      <v-container>
-        <v-btn color="primary">Botão Vuetify</v-btn>
-      </v-container>
-    </v-main>
+  <v-app>
+    <router-view />
   </v-app>
-
-  <RouterView />
 </template>
 
 <style scoped>
