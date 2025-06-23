@@ -7,6 +7,20 @@ export const swaggerSpec = swaggerJSDoc({
       title: 'API Cadastro de Usuários',
       version: '1.0.0',
     },
+    components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT'
+      }
+    }
+  },
+  security: [
+    {
+      bearerAuth: []
+    }
+  ],
     servers: [
       {
         url: 'http://localhost:3000/api',
@@ -15,3 +29,4 @@ export const swaggerSpec = swaggerJSDoc({
   },
   apis: ['./src/modules/**/*.ts'],
 });
+
