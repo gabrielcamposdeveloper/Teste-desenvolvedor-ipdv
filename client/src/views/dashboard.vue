@@ -2,9 +2,9 @@
   <v-app>
     <v-app-bar color="primary" dark>
       <v-app-bar-title>Dashboard</v-app-bar-title>
-      <v-spacer></v-spacer>
+
       <v-btn icon @click="logout">
-        <v-icon>mdi-logout</v-icon>
+        logout
       </v-btn>
     </v-app-bar>
 
@@ -27,11 +27,7 @@
   <v-btn color="secondary" @click="router.push('/cargo/cadastrar')">Cadastrar Cargo</v-btn>
 </v-card-actions>
       </v-container>
-
-
-
     </v-main>
-
 
   </v-app>
 </template>
@@ -57,4 +53,5 @@ const logout = () => {
   localStorage.removeItem('usuario')
   router.push('/')
 }
+
 </script>

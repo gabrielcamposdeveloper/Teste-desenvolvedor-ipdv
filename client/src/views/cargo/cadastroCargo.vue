@@ -34,25 +34,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { listarCargos, criarCargo } from '@/services/cargo/cargoService'
 
+const cargos = ref([])
 const modalAberta = ref(false)
 const formValid = ref(false)
 const form = ref(null)
-
 const novoCargo = ref({ nome: '' })
 
-const cargos = ref([
-  { nome: 'Administrador' },
-  { nome: 'Atendente' }
-])
+const headers = [{ text: 'Nome do Cargo', value: 'nome' }]
+const rules = { required: v => !!v || 'Campo obrigatório' }
 
-const headers = [
-  { text: 'Nome do Cargo', value: 'nome' }
-]
-
-const rules = {
-  required: v => !!v || 'Campo obrigatório'
+const carregarCargos = async () => {
+  try {
+    cargos.value = await listarCargos()
+  } catch (error) {
+    alert('Erro ao carregar cargos')
+  }
 }
 
 const abrirModal = () => {
@@ -64,11 +63,22 @@ const fecharModal = () => {
   modalAberta.value = false
 }
 
-const submitForm = () => {
-  if (!form.value?.validate()) return
+const submitForm = async () => {
+  const isValid = await form.value?.validate()
+  if (!isValid) return
 
-  cargos.value.push({ nome: novoCargo.value.nome })
-
-  fecharModal()
+  try {
+    await criarCargo(novoCargo.value.nome)
+    await carregarCargos()
+    fecharModal()
+  } catch (error) {
+    alert('Erro ao criar cargo')
+  }
 }
+
+onMounted(() => {
+  carregarCargos()
+})
+
+
 </script>

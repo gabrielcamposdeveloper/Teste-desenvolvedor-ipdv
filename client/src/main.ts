@@ -3,6 +3,7 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createVuetify } from 'vuetify'
+import '@mdi/font/css/materialdesignicons.css'
 
 import 'vuetify/styles'
 import * as components from 'vuetify/components'
@@ -13,7 +14,7 @@ import router from './router'
 
 const vuetify = createVuetify({
   components,
-  directives,
+  directives
 })
 
 const app = createApp(App)

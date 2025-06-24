@@ -64,15 +64,24 @@ const handleLogin = async () => {
 
   try {
     const data = await login(email.value, senha.value)
+    console.log('Login data:', data)
+
+    if (!data.token) {
+      alert('Token não recebido do servidor')
+      return
+    }
 
     localStorage.setItem('token', data.token)
     localStorage.setItem('usuario', JSON.stringify(data.usuario))
+    localStorage.setItem('token_expiration', (Date.now() + 60 * 60 * 1000).toString())
 
-    router.push('/dashboard')
+    await router.push('/dashboard')
   } catch (error) {
+    console.error(error)
     alert(error.response?.data?.mensagem || 'Erro ao fazer login')
   }
 }
+
 </script>
 
 <style scoped>

@@ -16,6 +16,20 @@ export const swaggerSpec = swaggerJSDoc({
       }
     }
   },
+  tags: [
+    {
+      name: 'Auth',
+      description: 'Operações de autenticação'
+    },
+    {
+      name: 'Usuário',
+      description: 'Operações relacionadas a usuários'
+    },
+    {
+      name: 'Cargo',
+      description: 'Operações relacionadas a cargos'
+    }
+  ],
   security: [
     {
       bearerAuth: []
