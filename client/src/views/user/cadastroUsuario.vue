@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <DefaultLayout>
     <v-main>
       <v-container>
         <v-card elevation="4" class="pa-4">
@@ -123,6 +124,7 @@
         </v-card>
       </v-container>
     </v-main>
+   </DefaultLayout>
   </v-app>
 
 <v-alert
@@ -143,7 +145,7 @@ import {
   deletarUsuario as apiDeletarUsuario
 } from '@/services/user/userService'
 import { listarCargos } from '@/services/cargo/cargoService'
-
+import DefaultLayout from '../../tamplate/dafaultTemplate.vue'
 const usuarios = ref([])
 const cargos = ref([])
 const modalAberta = ref(false)
