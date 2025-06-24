@@ -14,9 +14,7 @@
           <v-card-title class="text-h6 font-weight-bold">
             Bem-vindo, {{ nomeUsuario }}!
           </v-card-title>
-          <v-card-text>
-            Esta é sua área restrita. Você pode colocar aqui os dados que desejar.
-          </v-card-text>
+
         </v-card>
         <v-card-text>
   Esta é sua área restrita. Você pode colocar aqui os dados que desejar.
