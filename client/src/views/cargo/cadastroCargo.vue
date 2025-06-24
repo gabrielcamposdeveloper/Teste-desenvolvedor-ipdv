@@ -79,11 +79,12 @@ import {
   atualizarCargo,
   deletarCargo as apiDeletarCargo
 } from '@/services/cargo/cargoService'
+import DefaultLayout from '../../tamplate/dafaultTemplate.vue'
 
 const cargos = ref([])
 const modalAberta = ref(false)
 const formValid = ref(false)
-const form = ref(null)  // para validar o form
+const form = ref(null)
 const editandoCargo = ref(false)
 
 const cargoForm = ref({
