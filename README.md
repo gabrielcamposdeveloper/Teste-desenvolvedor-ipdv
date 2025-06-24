@@ -8,6 +8,10 @@
 ## INSTRUÇÕES USO/INSTALAÇÃO: DATA
 - Você deve criar via script "1_CreateDatabase.sql" ou SGBD pgadmin o banco com as definições padrões:
 
+- Acesso (Senha padrão - estou informando porque criptografo)
+EMAIL: maria.oliveira@email.com
+SENHA: senha123
+
 - Caso queira criar via interface, as informações abaixo podem te nortear:
 ```sh 
 OWNER = postgres
@@ -19,7 +23,7 @@ TABLESPACE = pg_default
 CONNECTION LIMIT = -1
 IS_TEMPLATE = false;
 ```
-    
+ 
 - Execute a query do Script "2_CreateTable.sql"
 - Execute a query do Script "3_CreateFunctions.sql"
 - Execute a query do Script "4_CreateViews.sql"
