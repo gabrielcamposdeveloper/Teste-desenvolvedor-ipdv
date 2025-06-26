@@ -9,6 +9,7 @@
 - Você deve criar via script "1_CreateDatabase.sql" ou SGBD pgadmin o banco com as definições padrões:
 
 - Acesso (Senha padrão - estou informando porque criptografo)
+  
 EMAIL: maria.oliveira@email.com
 SENHA: senha123
 
